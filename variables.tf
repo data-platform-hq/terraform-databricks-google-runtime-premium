@@ -7,12 +7,6 @@ variable "workspace_admins" {
   default     = {}
 }
 
-variable "databricks_google_service_account" {
-  description = "value"
-  type        = string
-  default     = ""
-}
-
 variable "iam_account_groups" {
   type = list(object({
     group_name   = optional(string)
