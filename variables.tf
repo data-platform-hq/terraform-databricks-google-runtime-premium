@@ -1,26 +1,16 @@
-# variable "suffix" {
-#   type        = string
-#   description = "Optional suffix that would be added to the end of resources names."
-#   default     = ""
-# }
-
-# # Identity Access Management variables
-# variable "user_object_ids" {
-#   type        = map(string)
-#   description = "Map of AD usernames and corresponding object IDs"
-#   default     = {}
-# }
-
 variable "workspace_admins" {
   type = object({
-    user              = list(string)
-    service_principal = list(string)
+    user              = optional(list(string))
+    service_principal = optional(list(string))
   })
   description = "Provide users or service principals to grant them Admin permissions in Workspace."
-  default = {
-    user              = null
-    service_principal = null
-  }
+  default     = {}
+}
+
+variable "databricks_google_service_account" {
+  description = "value"
+  type        = string
+  default     = ""
 }
 
 variable "iam_account_groups" {
@@ -49,36 +39,18 @@ variable "iam_workspace_groups" {
   }
 }
 
-# # SQL Endpoint variables
-# variable "sql_endpoint" {
-#   type = set(object({
-#     name                      = string
-#     cluster_size              = optional(string, "2X-Small")
-#     min_num_clusters          = optional(number, 0)
-#     max_num_clusters          = optional(number, 1)
-#     auto_stop_mins            = optional(string, "30")
-#     enable_photon             = optional(bool, false)
-#     enable_serverless_compute = optional(bool, false)
-#     spot_instance_policy      = optional(string, "COST_OPTIMIZED")
-#     warehouse_type            = optional(string, "PRO")
-#     permissions = optional(set(object({
-#       group_name       = string
-#       permission_level = string
-#     })), [])
-#   }))
-#   description = "Set of objects with parameters to configure SQL Endpoint and assign permissions to it for certain custom groups"
-#   default     = []
-# }
+variable "automation_sa" {
+  type        = string
+  description = "Name for automation service principal to be created for this Workspace. A databricks_obo_token will also be generated."
+  default     = ""
+}
 
-# variable "sp_client_id_secret_name" {
-#   type        = string
-#   description = "The name of Azure Key Vault secret that contains ClientID of Service Principal to access in Azure Key Vault"
-# }
+variable "token_lifetime_seconds" {
+  type        = number
+  description = "The lifetime of the token, in seconds. If no lifetime is specified, the token remains valid indefinitely"
+  default     = 315569520
+}
 
-# variable "sp_key_secret_name" {
-#   type        = string
-#   description = "The name of Azure Key Vault secret that contains client secret of Service Principal to access in Azure Key Vault"
-# }
 
 # # Secret Scope variables
 variable "secret_scope" {

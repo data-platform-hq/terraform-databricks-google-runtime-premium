@@ -66,7 +66,6 @@ resource "databricks_service_principal" "this" {
   )))
 
   display_name = each.key
-  #   application_id = lookup(var.user_object_ids, each.value)
   lifecycle { ignore_changes = [external_id, allow_cluster_create, allow_instance_pool_create, databricks_sql_access, workspace_access] }
 }
 
