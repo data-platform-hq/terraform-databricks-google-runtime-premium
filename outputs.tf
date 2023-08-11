@@ -1,8 +1,5 @@
-# output "secret_value" {
-#   value     = databricks_secret.this[*].string_value
-#   sensitive = true
-# }
-
-# output "scope_id" {
-#   value = databricks_secret_scope.this[*].
-# }
+output "token" {
+  value       = length(var.automation_sa) != 0 ? databricks_obo_token.automation[0].token_value : null
+  description = "Databricks Personal Authorization Token"
+  sensitive   = true
+}

@@ -23,14 +23,3 @@ resource "databricks_secret" "this" {
   string_value = each.value.string_value
   scope        = databricks_secret_scope.this[each.value.scope_name].id
 }
-
-# resource "databricks_secret_acl" "this" {
-#   for_each = {
-#     for param in var.key_vault_secret_scope : (param.name) => param
-#     if length(param.name) != 0
-#   }
-
-#   scope      = databricks_secret_scope.external[each.value.name].name
-#   principal  = "users"
-#   permission = "READ"
-# }

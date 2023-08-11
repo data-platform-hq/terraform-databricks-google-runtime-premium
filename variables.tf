@@ -3,7 +3,7 @@ variable "workspace_admins" {
     user              = optional(list(string))
     service_principal = optional(list(string))
   })
-  description = "Provide users or service principals to grant them Admin permissions in Workspace."
+  description = "Provide users or service principals to grant them Admin permissions in Workspace"
   default     = {}
 }
 
