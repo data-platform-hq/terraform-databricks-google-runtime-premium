@@ -23,3 +23,5 @@ resource "databricks_secret" "this" {
   string_value = each.value.string_value
   scope        = databricks_secret_scope.this[each.value.scope_name].id
 }
+
+# TODO: Secrets ACL's
