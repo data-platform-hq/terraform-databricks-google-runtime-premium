@@ -62,6 +62,6 @@ secrets - list of objects, where object's 'key' param is created key name and 's
 EOT
   default = [{
     scope_name = null
-    secrets = null
+    secrets    = null
   }]
 }
