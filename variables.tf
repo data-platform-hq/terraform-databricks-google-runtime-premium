@@ -45,15 +45,10 @@ variable "token_lifetime_seconds" {
   default     = 315569520
 }
 
-
-# # Secret Scope variables
+# Secret Scope variables
 variable "secret_scope" {
   type = list(object({
     scope_name = string
-    # acl = optional(list(object({
-    #   principal  = string
-    #   permission = string
-    # })))
     secrets = optional(list(object({
       key          = string
       string_value = string
@@ -67,7 +62,6 @@ secrets - list of objects, where object's 'key' param is created key name and 's
 EOT
   default = [{
     scope_name = null
-    # acl        = null
     secrets = null
   }]
 }
