@@ -1,3 +1,9 @@
+variable "suffix" {
+  description = "Resource name suffix"
+  type        = string
+  default     = ""
+}
+
 variable "workspace_admins" {
   type = object({
     user              = optional(list(string))
@@ -112,4 +118,48 @@ variable "clusters" {
   }))
   description = "Set of objects with parameters to configure Databricks clusters and assign permissions to it for certain custom groups"
   default     = []
+}
+
+# SQL Endpoint variables
+variable "sql_endpoint" {
+  type = set(object({
+    name                 = string
+    cluster_size         = optional(string, "2X-Small")
+    min_num_clusters     = optional(number, 0)
+    max_num_clusters     = optional(number, 1)
+    auto_stop_mins       = optional(string, "30")
+    enable_photon        = optional(bool, false)
+    spot_instance_policy = optional(string, "COST_OPTIMIZED")
+    warehouse_type       = optional(string, "PRO")
+    permissions = optional(set(object({
+      group_name       = string
+      permission_level = string
+    })), [])
+  }))
+  description = "Set of objects with parameters to configure SQL Endpoint and assign permissions to it for certain custom groups"
+  default     = []
+}
+
+variable "security_policy" {
+  description = "The policy for controlling access to datasets"
+  type        = string
+  default     = "DATA_ACCESS_CONTROL"
+}
+
+variable "data_access_config" {
+  description = "Data access configuration for databricks_sql_endpoint, such as configuration for an external Hive metastore, Hadoop Filesystem configuration, etc"
+  type        = map(any)
+  default     = {}
+}
+
+variable "google_service_account" {
+  description = "used to access GCP services, such as Cloud Storage, from databricks_sql_endpoint"
+  type        = string
+  default     = ""
+}
+
+variable "sql_config_params" {
+  description = "SQL Configuration Parameters let you override the default behavior for all sessions with all endpoints"
+  type        = map(any)
+  default     = {}
 }
