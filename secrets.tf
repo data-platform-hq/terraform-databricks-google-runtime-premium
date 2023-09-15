@@ -22,6 +22,9 @@ resource "databricks_secret" "this" {
   key          = each.value.key
   string_value = each.value.string_value
   scope        = databricks_secret_scope.this[each.value.scope_name].id
+
+  depends_on = [databricks_secret_scope.this]
+
 }
 
 # TODO: Secrets ACL's
