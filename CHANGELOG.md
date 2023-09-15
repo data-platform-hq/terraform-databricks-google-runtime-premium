@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/data-platform-hq/terraform-databricks-google-runtime-premium/compare/v1.0.0...v1.1.0) (2023-09-15)
+
+
+### Features
+
+* clusters support ([b1e205e](https://github.com/data-platform-hq/terraform-databricks-google-runtime-premium/commit/b1e205e377cac7f574af10c7328917fea9c575d7))
+
 # 1.0.0 (2023-08-21)
 
 
