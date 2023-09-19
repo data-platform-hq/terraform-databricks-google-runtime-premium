@@ -129,7 +129,7 @@ variable "sql_endpoint" {
     max_num_clusters     = optional(number, 1)
     auto_stop_mins       = optional(string, "30")
     enable_photon        = optional(bool, false)
-    spot_instance_policy = optional(string, "COST_OPTIMIZED")
+    spot_instance_policy = optional(string, "RELIABILITY_OPTIMIZED")
     warehouse_type       = optional(string, "PRO")
     permissions = optional(set(object({
       group_name       = string

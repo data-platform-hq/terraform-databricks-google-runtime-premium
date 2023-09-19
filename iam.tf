@@ -1,6 +1,6 @@
 locals {
   admin_user_map = var.workspace_admins.user == null ? {} : {
-    for user in var.workspace_admins.user : "user.${user}" => user if user != null
+    for u in var.workspace_admins.user : "user.${u}" => u if u != null
   }
 
   admin_sp_map = var.workspace_admins.service_principal == null ? {} : {
