@@ -4,6 +4,7 @@ variable "suffix" {
   default     = ""
 }
 
+# Identity Access Management variables
 variable "workspace_admins" {
   type = object({
     user              = optional(list(string))
@@ -11,7 +12,10 @@ variable "workspace_admins" {
     generate_token    = optional(bool) # Applyed only for service principal
   })
   description = "Provide users or service principals to grant them Admin permissions in Workspace."
-  default     = {}
+  default = {
+    user              = null
+    service_principal = null
+  }
 }
 
 variable "iam_account_groups" {

@@ -19,24 +19,27 @@ Terraform module for creation Google Databricks premium Runtime
 No modules.
 
 ## Resources
-| Name                                                                                                                                       | Type     |
-|--------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| [databricks_cluster.cluster](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/cluster#gcp_attributes)   | resource |
-| [databricks_cluster_policy.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/cluster_policy)       | resource |
-| [databricks_group.account_groups](https://registry.terraform.io/providers/databricks/databricks/latest/docs/data-sources/group)            | data     |
-| [databricks_group.admin](https://registry.terraform.io/providers/databricks/databricks/latest/docs/data-sources/group)                     | data     |
-| [databricks_group.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/group)                         | resource |
-| [databricks_user.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/user)                           | resource |
-| [databricks_service_principal.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/service_principal) | resource |
-| [databricks_group_member.admin](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/group_member)          | resource |
-| [databricks_group_member.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/group_member)           | resource |
-| [databricks_entitlements.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/entitlements)           | resource |
-| [databricks_permissions.token_usage](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/permissions)      | resource |
-| [databricks_obo_token.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/obo_token)                 | resource |
-| [databricks_sql_endpoint.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/sql_endpoint)           | resource |
-| [databricks_sql_global_config.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/sql_global_config) | resource |
-| [databricks_secret_scope.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/secret_scope)           | resource |
-| [databricks_secret.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/secret)                       | resource |
+| Name                                                                                                                                                       | Type     |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| [databricks_cluster.cluster](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/cluster#gcp_attributes)                   | resource |
+| [databricks_cluster_policy.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/cluster_policy)                       | resource |
+| [databricks_group.account_groups](https://registry.terraform.io/providers/databricks/databricks/latest/docs/data-sources/group)                            | data     |
+| [databricks_group.admin](https://registry.terraform.io/providers/databricks/databricks/latest/docs/data-sources/group)                                     | data     |
+| [databricks_group.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/group)                                         | resource |
+| [databricks_user.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/user)                                           | resource |
+| [databricks_service_principal.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/service_principal)                 | resource |
+| [databricks_group_member.admin](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/group_member)                          | resource |
+| [databricks_group_member.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/group_member)                           | resource |
+| [databricks_entitlements.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/entitlements)                           | resource |
+| [databricks_permissions.token_usage](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/permissions)                      | resource |
+| [databricks_obo_token.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/obo_token)                                 | resource |
+| [databricks_sql_endpoint.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/sql_endpoint)                           | resource |
+| [databricks_sql_global_config.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/sql_global_config)                 | resource |
+| [databricks_permissions.clusters](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/permissions#cluster-usage)           | resource |
+| [databricks_permissions.sql_endpoint](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/permissions#sql-warehouse-usage) | resource |
+| [databricks_secret_acl.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/secret_acl)                               | resource |
+| [databricks_secret_scope.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/secret_scope)                           | resource |
+| [databricks_secret.this](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/secret)                                       | resource |
 
 
 ## Inputs
