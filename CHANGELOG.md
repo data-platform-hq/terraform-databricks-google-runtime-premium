@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/data-platform-hq/terraform-databricks-google-runtime-premium/compare/v1.2.0...v1.3.0) (2023-09-26)
+
+
+### Features
+
+* implemented IAM and permissions ([2c08869](https://github.com/data-platform-hq/terraform-databricks-google-runtime-premium/commit/2c08869e9850b1ace4215549dbc1df99262abe1b))
+
 # [1.2.0](https://github.com/data-platform-hq/terraform-databricks-google-runtime-premium/compare/v1.1.0...v1.2.0) (2023-09-26)
 
 
