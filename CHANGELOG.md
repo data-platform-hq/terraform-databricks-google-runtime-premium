@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/data-platform-hq/terraform-databricks-google-runtime-premium/compare/v1.1.0...v1.2.0) (2023-09-26)
+
+
+### Features
+
+* implemented sql warehouse deployment ([751a196](https://github.com/data-platform-hq/terraform-databricks-google-runtime-premium/commit/751a196258b33949161e92756630673e5d091f50))
+
 # [1.1.0](https://github.com/data-platform-hq/terraform-databricks-google-runtime-premium/compare/v1.0.0...v1.1.0) (2023-09-15)
 
 
