@@ -98,15 +98,20 @@ EOT
 variable "clusters" {
   type = set(object({
     cluster_name                 = string
+    runtime_engine               = optional(string)
     spark_version                = optional(string, "13.3.x-scala2.12")
     spark_conf                   = optional(map(any), {})
     spark_env_vars               = optional(map(any), {})
     data_security_mode           = optional(string, "USER_ISOLATION")
     node_type_id                 = optional(string, "")
     autotermination_minutes      = optional(number, 30)
+    num_workers                  = optional(number)
     min_workers                  = optional(number, 1)
     max_workers                  = optional(number, 2)
+    google_service_account       = optional(string, "")
     availability                 = optional(string, "PREEMPTIBLE_WITH_FALLBACK_GCP")
+    boot_disk_size               = optional(number)
+    local_ssd_count              = optional(number)
     zone_id                      = optional(string, "")
     cluster_log_conf_destination = optional(string, null)
     single_user_name             = optional(string, null)
@@ -124,7 +129,7 @@ variable "clusters" {
   default     = []
 }
 
-# SQL Endpoint variables
+# SQL Warehouse variables
 variable "sql_endpoint" {
   type = set(object({
     name                 = string
@@ -144,26 +149,44 @@ variable "sql_endpoint" {
   default     = []
 }
 
-variable "security_policy" {
-  description = "The policy for controlling access to datasets"
+variable "sql_global_config" {
+  type = object({
+    security_policy            = optional(string)
+    data_access_config         = optional(map(any))
+    sql_google_service_account = optional(string)
+    sql_config_params          = optional(map(any))
+  })
+  description = "Parameters to configure the security policy, databricks_instance_profile, and data access properties for all databricks_sql_endpoint of workspace"
+  default     = null
+}
+
+
+# Mount Google Cloud Storage Filesystem
+variable "mount_enabled" {
+  type        = bool
+  description = "Boolean flag that determines whether mount point for storage bucket is created"
+  default     = false
+}
+
+variable "mount_name" {
+  description = "Full Google Storage mount name"
   type        = string
-  default     = "DATA_ACCESS_CONTROL"
+  default     = ""
 }
-
-variable "data_access_config" {
-  description = "Data access configuration for databricks_sql_endpoint, such as configuration for an external Hive metastore, Hadoop Filesystem configuration, etc"
-  type        = map(any)
-  default     = {}
-}
-
-variable "google_service_account" {
-  description = "used to access GCP services, such as Cloud Storage, from databricks_sql_endpoint"
+variable "mount_bucket_name" {
+  description = "Full Google Storage mounted bucket name"
   type        = string
   default     = ""
 }
 
-variable "sql_config_params" {
-  description = "SQL Configuration Parameters let you override the default behavior for all sessions with all endpoints"
-  type        = map(any)
-  default     = {}
+variable "mount_service_account" {
+  description = "email of registered Google Service Account for mounted bucket data access"
+  type        = string
+  default     = ""
+}
+
+variable "mount_cluster_name" {
+  type        = string
+  description = "Name of the cluster that will be used during storage mounting"
+  default     = null
 }

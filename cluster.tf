@@ -16,8 +16,9 @@ resource "databricks_cluster" "cluster" {
   }
 
   gcp_attributes {
-    availability = each.value.availability
-    zone_id      = each.value.zone_id
+    google_service_account = each.value.google_service_account
+    availability           = each.value.availability
+    zone_id                = each.value.zone_id
   }
 
   dynamic "cluster_log_conf" {
