@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/data-platform-hq/terraform-databricks-google-runtime-premium/compare/v1.3.0...v1.4.0) (2023-10-30)
+
+
+### Features
+
+* implemented Google Storage Databricks mount ([dbafc04](https://github.com/data-platform-hq/terraform-databricks-google-runtime-premium/commit/dbafc043dad2bcd41879e7ac6cd31faf21a2b6af))
+
 # [1.3.0](https://github.com/data-platform-hq/terraform-databricks-google-runtime-premium/compare/v1.2.0...v1.3.0) (2023-09-26)
 
 
